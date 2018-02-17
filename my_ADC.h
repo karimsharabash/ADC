@@ -9,6 +9,6 @@
 #define MY_ADC_H_
 
 void ADC_Init();
-unsigned int ADC_Read(unsigned char channel);
+unsigned short int ADC_Read(unsigned char channel);
 
 #endif /* MY_ADC_H_ */
