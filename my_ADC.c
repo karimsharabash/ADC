@@ -14,8 +14,8 @@ void ADC_Init()
 }
 unsigned int ADC_Read(unsigned char channel)
 {
-        ADMUX &=0xE0;
-	channel &=0x07;                                              //   remove the recent channel
+        ADMUX &=0xE0;                                                 //   remove the recent channel
+	channel &=0x07;                                              //   enter the new channel and mask it with  only 3 bits
 	ADMUX |=channel;                                             //   select ADC channel
 	ADCSRA|=(1<<ADSC);                                           //  Start conversion for ADC
 	while(!(ADCSRA&(1<<ADIF)));                                  //  Wait till conversion complete
